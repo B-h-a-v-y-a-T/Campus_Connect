@@ -39,7 +39,10 @@ export default function Navbar() {
 
   const navLinks =
     role === "student"
-      ? [{ href: "/", label: "Events" }]
+      ? [
+          { href: "/", label: "Events" },
+          { href: "/profile", label: "Profile" },
+        ]
       : role === "sponsor"
       ? [
           { href: "/", label: "Home" },

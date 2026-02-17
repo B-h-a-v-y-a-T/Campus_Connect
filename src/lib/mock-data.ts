@@ -74,7 +74,7 @@ export const events: Event[] = [
     time: "09:00 AM",
     location: "Innovation Hub, Block A",
     category: "tech",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80",
     attendees: 142,
     maxAttendees: 200,
     organizer: "IEEE Student Branch",
@@ -90,7 +90,7 @@ export const events: Event[] = [
     time: "06:00 PM",
     location: "Open Air Theatre",
     category: "cultural",
-    image: "https://images.unsplash.com/photo-1492684223f8-e1f4e7e08a89?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80",
     attendees: 320,
     maxAttendees: 500,
     organizer: "Cultural Committee",
@@ -106,7 +106,7 @@ export const events: Event[] = [
     time: "02:00 PM",
     location: "Seminar Hall 2",
     category: "workshop",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80",
     attendees: 58,
     maxAttendees: 80,
     organizer: "GDSC",
@@ -121,7 +121,7 @@ export const events: Event[] = [
     time: "08:00 AM",
     location: "Sports Ground",
     category: "sports",
-    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=600&q=80",
     attendees: 180,
     maxAttendees: 300,
     organizer: "Sports Club",
@@ -137,7 +137,7 @@ export const events: Event[] = [
     time: "05:00 PM",
     location: "Incubation Centre",
     category: "social",
-    image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80",
     attendees: 45,
     maxAttendees: 60,
     organizer: "E-Cell",
@@ -153,7 +153,7 @@ export const events: Event[] = [
     time: "10:00 AM",
     location: "Lab 301, CS Block",
     category: "tech",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80",
     attendees: 72,
     maxAttendees: 100,
     organizer: "CyberSec Club",
@@ -265,8 +265,10 @@ export function searchEvents(query: string) {
   return _events.filter(
     (e) =>
       e.title.toLowerCase().includes(q) ||
+      e.description.toLowerCase().includes(q) ||
       e.category.toLowerCase().includes(q) ||
-      e.organizer.toLowerCase().includes(q)
+      e.organizer.toLowerCase().includes(q) ||
+      e.location.toLowerCase().includes(q)
   );
 }
 
