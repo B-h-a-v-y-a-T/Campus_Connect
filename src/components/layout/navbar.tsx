@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useUser } from "@/context/user-context";
 import { Role, getCoins } from "@/lib/mock-data";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,7 +12,6 @@ import {
   Briefcase,
   ChevronDown,
   Coins,
-  Zap,
 } from "lucide-react";
 
 const roleConfig: Record<Role, { label: string; icon: React.ReactNode; color: string }> = {
@@ -58,8 +58,14 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-violet-600 text-white font-bold text-sm group-hover:bg-violet-500 transition-colors">
-            <Zap className="h-5 w-5" />
+          <div className="relative h-9 w-9 rounded-lg overflow-hidden">
+            <Image
+              src="/logo.jpeg"
+              alt="Campus Connect Logo"
+              width={36}
+              height={36}
+              className="object-cover"
+            />
           </div>
           <span className="text-lg font-bold text-white tracking-tight">
             Campus<span className="text-violet-400">Connect</span>
